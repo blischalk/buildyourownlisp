@@ -13,7 +13,7 @@ char* readline(char* prompt) {
   fputs(prompt, stdout);
   fgets(buffer, 2048, stdin);
   char* cpy = malloc(strlen(buffer)+1);
-  strcpy(cpy,bufer);
+  strcpy(cpy,buffer);
   cpy[strlen(cpy)-1] = '\0';
   return cpy;
 }
@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
       "                                            \
       number : /-?[0-9]+/ ;                        \
       operator : '+' | '-' | '*' | '/' ;           \
-      expr : <number> | '(' <perator> <expr>+ ')'; \
+      expr : <number> | '(' <operator> <expr>+ ')'; \
       lispy : /^/ <operator> <expr>+ /$/ ;         \
       ",
       Number, Operator, Expr, Lispy);
