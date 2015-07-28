@@ -35,11 +35,11 @@ int main(int argc, char** argv) {
 
   /* Define them with the following Language */
   mpca_lang(MPCA_LANG_DEFAULT,
-      "                                            \
-      number : /-?[0-9]+/ ;                        \
-      operator : '+' | '-' | '*' | '/' ;           \
+      "                                             \
+      number : /-?[0-9]+/ ;                         \
+      operator : '+' | '-' | '*' | '/' | '%' ;      \
       expr : <number> | '(' <operator> <expr>+ ')'; \
-      lispy : /^/ <operator> <expr>+ /$/ ;         \
+      lispy : /^/ <operator> <expr>+ /$/ ;          \
       ",
       Number, Operator, Expr, Lispy);
   puts("Lispy Version 0.0.0.0.1");
